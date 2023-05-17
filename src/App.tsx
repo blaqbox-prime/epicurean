@@ -6,7 +6,12 @@ import Home from "./pages/Home";
 import { IoChevronUp } from "react-icons/io5";
 import Menu from "./pages/Menu";
 import Footer from "./components/Footer";
+import {  Switch,
+  Route,
+  Link} from 'react-router-dom'
 import Pages from "./components/Pages";
+import CartSideBar from './components/CartSideBar';
+
 
 function App() {
   const [preloaded, setPreloaded] = useState(false);
@@ -28,6 +33,7 @@ function App() {
 
   return (
     <div className="App" >
+      
       {/* PreLoader */}
       <Preloader loaded={preloaded} />
 
@@ -39,11 +45,9 @@ function App() {
       
       {/* PAGES */}
 
-      <Pages>
-             {/* <Home /> */}
-        <Menu />
-
-      </Pages>
+      <Pages />
+             
+      <CartSideBar isCartOpen={true} toggleCartSideBar={() => {}} />
  
       {/* FOOTER */}
 

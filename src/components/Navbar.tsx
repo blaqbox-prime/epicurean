@@ -24,11 +24,11 @@ function Navbar({toggleNavbar, isOpen = false} : props) {
       <Logo />
 
       <NavbarList>
-        <NavbarItem link="#" text="Home" active={true}/>
-        <NavbarItem link="#menu" text="Menu" />
-        <NavbarItem link="#news" text="News" />
-        <NavbarItem link="#about" text="About Us" />
-        <NavbarItem link="#contact" text="Contact" />
+        <NavbarItem link="/" text="Home"/>
+        <NavbarItem link="/menu" text="Menu" />
+        <NavbarItem link="/news" text="News" />
+        <NavbarItem link="/about" text="About Us" />
+        <NavbarItem link="/contact" text="Contact" />
       </NavbarList>
 
       <div className="text-center">

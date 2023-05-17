@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Menu from '../pages/Menu'
 
@@ -7,21 +7,18 @@ type Props = {
     children: ReactNode
 }
 
-function Pages({children}: Props) {
+function Pages() {
 
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <Home/>
-        },
-        {
-            path: "/menu",
-            element: <Menu />
-        }
-    ])
 
   return (
-    <div>{children}</div>
+    <Switch>
+        <Route exact path="/">
+            <Home />
+        </Route>
+        <Route exact path="/menu" >
+            <Menu />
+        </Route>
+    </Switch>
   )
 }
 

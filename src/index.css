@@ -647,11 +647,13 @@ body.nav-active {
 /* HEADER  ======================================================= */
 
 .overlay,
+.cartSideBar .btn,
 .header .btn {
   display: none;
 }
 
-.header {
+.header,
+.cartSideBar {
   position: fixed;
   top: 0;
   left: 0;
@@ -663,17 +665,20 @@ body.nav-active {
   transition: var(--transition-1);
 }
 
-.header.active {
+.header.active,
+.cartSideBar.active {
   padding-block: 20px;
   background-color: var(--eerie-black-4);
   border-color: var(--black-alpha-15);
 }
 
-.header.hide {
+.header.hide,
+.cartSideBar.hide {
   transform: translateY(-100%);
   transition-delay: 250ms;
 }
 
+.cartSideBar .container,
 .header .container {
   padding-inline: 20px;
   display: flex;
@@ -842,13 +847,16 @@ body.nav-active {
   opacity: 0;
   pointer-events: none;
   transition: var(--transition-2);
-  z-index: 1;
+  z-index: 10;
 }
 
 .overlay.active {
   opacity: 1;
   pointer-events: all;
 }
+
+/* Cart Sidebar ------------------------- */
+
 
 /* Hero -------------------------------- */
 
@@ -889,8 +897,13 @@ body.nav-active {
   height: 100%;
 }
 
+.hero-slider{
+  height: 100vh;
+  /* max-height: 100vh; */
+}
+
 .hero .slider-bg {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -920,7 +933,7 @@ body.nav-active {
 
 .hero-text {
   margin-block: 10px 40px;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
 
 .hero .btn {

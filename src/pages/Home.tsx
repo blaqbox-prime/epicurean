@@ -7,8 +7,6 @@ import {
   IoChevronBack,
   IoChevronDown,
   IoChevronForward,
-  IoChevronUp,
-  IoMailOutline,
   IoPersonOutline,
   IoTimeOutline,
 } from "react-icons/io5";
@@ -20,7 +18,8 @@ import MenuItem from "../components/MenuItem";
 import GridList from "../components/GridList";
 import LinkButton from "../components/LinkButton";
 import EventListItem from "../components/EventListItem";
-import Logo from "../components/Logo";
+import { Link, NavLink } from "react-router-dom";
+import Reservation from "../components/Reservation";
 
 function Home() {
   let autoSlideInterval: string | number | NodeJS.Timeout | undefined;
@@ -125,7 +124,7 @@ function Home() {
             <IoChevronForward />
           </button>
 
-          <a href="#" className="hero-btn has-after">
+          <a href="#reservation-form" className="hero-btn has-after">
             <img
               src="./assets/images/hero-icon.png"
               width={48}
@@ -232,13 +231,13 @@ function Home() {
                 074 985 1245
               </a>
 
-              <a href="#" className="btn btn-primary">
+              <Link to="/about" className="btn btn-primary">
                 <span className="text text-1">Read More</span>
                 <span className="text text-2" aria-hidden={true}>
                   {" "}
                   Read More
                 </span>
-              </a>
+              </Link>
             </div>
 
             <figure className="about-banner">
@@ -335,12 +334,12 @@ function Home() {
                 <span className="span body-1">R214.99</span>
               </div>
 
-              <a href="#" className="btn btn-primary">
+              <Link to="/menu" className="btn btn-primary">
                 <span className="text text-1">View All Menu</span>
                 <span className="text text-2" aria-hidden={true}>
                   View All Menu
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -430,7 +429,7 @@ function Home() {
               <span className="span">9:00 pm</span>
             </p>
 
-            <LinkButton href="#" text="View All Menu" />
+            <LinkButton href="/menu" text="View All Menu" />
 
             <img
               src="assets/images/shape-5.png"
@@ -490,133 +489,7 @@ function Home() {
 
         {/* Reservation */}
 
-        <section className="reservation">
-          <div className="container">
-            <div className="form reservation-form bg-black-10">
-              <form action="" className="form-left">
-                <h2 className="headline-1 text-center">Online Reservation</h2>
-                <p className="form-text text-center">
-                  Booking request{" "}
-                  <a href="tel:07458124578" className="linl">
-                    07458124578
-                  </a>
-                  or fill out the order form
-                </p>
-
-                <div className="input-wrapper">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Your Name"
-                    autoComplete="off"
-                    className="input-field"
-                  />
-
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="Phone Number"
-                    className="input-field"
-                  />
-                </div>
-
-                <div className="input-wrapper">
-                  <div className="icon-wrapper">
-                    <IoPersonOutline aria-hidden />
-                    <select name="person" id="" className="input-field">
-                      <option value="1">1 Person</option>
-                      <option value="2">2 People</option>
-                      <option value="3">3 People</option>
-                      <option value="4">4 People</option>
-                      <option value="5">5 People</option>
-                      <option value="6">6 People</option>
-                      <option value="7">7 People</option>
-                    </select>
-                    <IoChevronDown aria-hidden />
-                  </div>
-                  <div className="icon-wrapper">
-                    <IoCalendarClear />
-
-                    <input
-                      type="date"
-                      name="date"
-                      id="date"
-                      placeholder="Pick a date"
-                      autoComplete="off"
-                      className="input-field"
-                    />
-                    <IoChevronDown aria-hidden />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <IoTimeOutline />
-
-                    <select name="time" id="" className="input-field">
-                      <option value="8">08:00 AM</option>
-                      <option value="10">10:00 AM</option>
-                      <option value="12">12:00 PM</option>
-                      <option value="14">02:00 PM</option>
-                      <option value="16">04:00 PM</option>
-                      <option value="18">06:00 PM</option>
-                      <option value="20">08:00 PM</option>
-                    </select>
-
-                    <IoChevronDown aria-hidden />
-                  </div>
-
-                </div>
-
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  autoComplete="off"
-                  id="message"
-                  className="input-field"
-                ></textarea>
-
-                <button type="submit" className="btn btn-secondary">
-                  <span className="text text-1">Book A Table</span>
-                  <span className="text text-2" aria-hidden>
-                    Book A Table
-                  </span>
-                </button>
-              </form>
-
-              <div
-                className="form-right text-center"
-                style={{
-                  backgroundImage: "url('assets/images/form-pattern.png')",
-                }}
-              >
-                <h2 className="headline-1 text-center">Contact Us</h2>
-                <p className="contact-label">Booking Request</p>
-                <a
-                  href="tel:04875124548"
-                  className="body-1 contact-number hover-underline"
-                >
-                  04875124548
-                </a>
-
-                <div className="separat"></div>
-
-                <p className="contact-label">Location</p>
-
-                <address className="body-4">
-                  7 Acacia St. Flora Park, Polokwane 0699, L
-                </address>
-
-                <p className="contact-label">Lunch Time</p>
-
-                <p className="body-4">
-                  Monday - Sunday <br />
-                  11:00 AM - 2:30 PM
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Reservation />
 
         {/* Features */}
 

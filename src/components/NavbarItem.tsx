@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 type props = {
   link:string,
@@ -9,10 +10,11 @@ type props = {
 function NavbarItem({link, text,active = false} : props) {
   return (
     <li className="navbar-item">
-      <a href={link} className={`navbar-link hover-underline ${active && "active"}`}>
+      <NavLink to={link} className="navbar-link hover-underline" 
+      activeClassName="active" exact >
         <div className="separator"></div>
         <span className="span">{text}</span>
-      </a>
+      </NavLink>
     </li>
   );
 }
