@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/epicurean/static/css/main.c73d8431.css",
+    "main.js": "/epicurean/static/js/main.c847f7ad.js",
+    "static/media/img-pattern.svg": "/epicurean/static/media/img-pattern.148d9c075c75a3e657f7.svg",
+    "static/media/footer-form-pattern.svg": "/epicurean/static/media/footer-form-pattern.7fd6cfcfb07bdb471546.svg",
+    "static/media/footer-form-bg.png": "/epicurean/static/media/footer-form-bg.5919ceba950c7c4cb214.png",
+    "index.html": "/epicurean/index.html",
+    "static/media/separator.svg": "/epicurean/static/media/separator.b98c0c4c2ec1b7cd5908.svg",
+    "main.c73d8431.css.map": "/epicurean/static/css/main.c73d8431.css.map",
+    "main.c847f7ad.js.map": "/epicurean/static/js/main.c847f7ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c73d8431.css",
+    "static/js/main.c847f7ad.js"
+  ]
+}
