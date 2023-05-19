@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function Reservation() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit: SubmitHandler<any> = (data: any) => {
         console.log(data)
             toast(`Reservation for ${data.person} successful!`, {

@@ -3,12 +3,8 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  IoCalendarClear,
   IoChevronBack,
-  IoChevronDown,
   IoChevronForward,
-  IoPersonOutline,
-  IoTimeOutline,
 } from "react-icons/io5";
 import Slider from "../components/Slider";
 import Slide from "../components/Slide";
@@ -18,7 +14,7 @@ import MenuItem from "../components/MenuItem";
 import GridList from "../components/GridList";
 import LinkButton from "../components/LinkButton";
 import EventListItem from "../components/EventListItem";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Reservation from "../components/Reservation";
 
 function Home() {

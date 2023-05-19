@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export interface ISlide {
     imageUrl: string,
@@ -30,11 +32,11 @@ export default function Slide({active = false,imageUrl,title1,title2,subtitle,te
                   {text}
                 </p>
 
-                <a href="#" className={`btn ${secondary ? "btn-secondary" : "btn-primary"} slider-reveal`}>
+                <Link to="/menu" className={`btn ${secondary ? "btn-secondary" : "btn-primary"} slider-reveal`}>
                   <span className="text text-1" >{linkText}</span>
 
                   <span className='text text-2' aria-hidden={true}>{linkText}</span>
-                </a>
+                </Link>
 
               </li>
   )

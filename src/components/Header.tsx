@@ -2,15 +2,19 @@
 
 import React, { createRef } from 'react'
 import Navbar from './Navbar';
+import CartSideBar from './CartSideBar';
+import {HiOutlineShoppingBag} from 'react-icons/hi';
 
 
 type props = { 
     toggleNav: Function | any, 
-    isNavOpen: boolean
+    isNavOpen: boolean,
+    isCartOpen: boolean, 
+    toggleCartSidebar: Function | any,
 }
 
 
-function Header({toggleNav, isNavOpen} : props) {
+function Header({toggleNav, isNavOpen, isCartOpen, toggleCartSidebar} : props) {
 
     const headerRef = createRef<HTMLElement>()
 
@@ -57,11 +61,21 @@ function Header({toggleNav, isNavOpen} : props) {
 
       <Navbar toggleNavbar={() => { toggleNav(); } } isOpen={isNavOpen} />
 
+    {/* CART SIDEBAR */}
+    <CartSideBar isCartOpen={isCartOpen} toggleCartSideBar={toggleCartSidebar} />
+
+
       <a href="#" className="btn btn-secondary">
         <span className="text text-1">Find A Table</span>
 
         <span className="text text-2" aria-hidden="true">Find A Table</span>
       </a>
+
+      <button className="nav-open-btn" aria-label="open menu" 
+      onClick={() => toggleCartSidebar()}
+      >
+        <HiOutlineShoppingBag color='white' size={18}/>
+      </button>
 
       <button className="nav-open-btn" aria-label="open menu" data-nav-toggler
         onClick={() => { toggleNav(); } }

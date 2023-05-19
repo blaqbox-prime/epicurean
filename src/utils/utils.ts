@@ -12,6 +12,14 @@ export const addEventOnElements = function (
   }
 };
 
+let formatting_options = {
+  style: 'currency',
+  currency: 'ZAR',
+  minimumFractionDigits: 2,
+};
+
+export const RandString = new Intl.NumberFormat( "en-ZA", formatting_options);
+
 export const slides: ISlide[] = [
   {
     active: true,

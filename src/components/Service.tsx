@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { HTMLProps } from 'react'
 
 export interface IService extends HTMLProps<HTMLImageElement> {
