@@ -71,10 +71,10 @@ function Header({toggleNav, isNavOpen, isCartOpen, toggleCartSidebar} : props) {
         <span className="text text-2" aria-hidden="true">Find A Table</span>
       </a>
 
-      <button className="nav-open-btn" aria-label="open menu" 
+      <button className="shoppingBagIcon" aria-label="open menu" 
       onClick={() => toggleCartSidebar()}
       >
-        <HiOutlineShoppingBag color='white' size={18}/>
+        <HiOutlineShoppingBag color='white' size={24}/>
       </button>
 
       <button className="nav-open-btn" aria-label="open menu" data-nav-toggler

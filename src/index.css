@@ -755,6 +755,19 @@ body.nav-active {
   color: var(--gold-crayola);
 }
 
+.cartSideBar .bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartSideBar .btn{
+  max-width: 100%;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
 
 .navbar .logo {
   max-width: max-content;

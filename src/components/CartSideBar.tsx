@@ -4,6 +4,7 @@ import { IoCloseOutline } from 'react-icons/io5'
 import { IMenuItem } from './MenuItem';
 import CartItem from './CartItem';
 import LinkButton from './LinkButton';
+import { Link } from 'react-router-dom';
 
 
 type Props = {
@@ -29,7 +30,8 @@ export default function CartSideBar({isCartOpen=true, toggleCartSideBar}: Props)
       <div className="container">
         <article className={`bar ${isCartOpen && "active"} `}>
 
-        <button className="close-btn" aria-label="close menu" id="btn-close-menu" data-nav-toggler
+       <div className="cartSideBar__itemsCointainer">
+       <button className="close-btn" aria-label="close menu" id="btn-close-menu" data-nav-toggler
        onClick={() => {toggleCartSideBar()}}
       >
         <IoCloseOutline  size={18} />
@@ -41,9 +43,13 @@ export default function CartSideBar({isCartOpen=true, toggleCartSideBar}: Props)
         <CartItem menuItem={example} quantity={2} />
         <CartItem menuItem={example} quantity={5} />
 
+       </div>
         {/* CHECKOUT BTN */}
 
-        <LinkButton text='Checkout' href='' />
+        <Link to={"#"} className="btn btn-primary">
+              <span className="text text-1">Checkout</span>
+              <span className="text text-2" aria-hidden>Checkout</span>
+            </Link>
 
         </article>
       <div className={`overlay ${isCartOpen && "active"}`} data-nav-toggler data-overlay></div>
