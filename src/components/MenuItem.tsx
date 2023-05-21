@@ -1,5 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import {useDispatch} from 'react-redux'
+import { addToCart } from '../redux/CartSlice';
+import { HiShoppingBag } from 'react-icons/hi';
+import { toast } from 'react-toastify';
 
 export interface IMenuItem {
     imgUrl: string,
@@ -11,7 +15,19 @@ export interface IMenuItem {
     isNew?: boolean
 }
 
+
+
 export default function MenuItem({imgUrl,alt,title,description,seasonal = false, isNew = false,price}: IMenuItem) {
+
+  const dispatch = useDispatch();
+  
+  const handleOnClick = () => {
+    const item:IMenuItem = {imgUrl,alt,title,description,seasonal, isNew, price};
+    dispatch(addToCart(item))
+    toast.success(`${title} added to cart`)
+  }
+
+
   return (
     <li>
                 <div className="menu-card hover:card">
@@ -19,6 +35,8 @@ export default function MenuItem({imgUrl,alt,title,description,seasonal = false,
                     className="card-banner img-holder"
                     // style={{ width: 100, height: 100 }}
                   >
+                    
+                    <div className="product_img_holder">
                     <img
                       src={imgUrl}
                       loading="lazy"
@@ -26,7 +44,10 @@ export default function MenuItem({imgUrl,alt,title,description,seasonal = false,
                       height={100}
                       alt={alt}
                       className="img-cover"
+                      onClick={handleOnClick}
                     />
+                    <HiShoppingBag className='bagIcon' size={28}/>
+                    </div>
                   </figure>
 
                   <div className="">

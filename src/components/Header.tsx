@@ -4,6 +4,7 @@ import React, { createRef } from 'react'
 import Navbar from './Navbar';
 import CartSideBar from './CartSideBar';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 
 type props = { 
@@ -26,7 +27,9 @@ function Header({toggleNav, isNavOpen, isCartOpen, toggleCartSidebar} : props) {
     const isScrollBottom = lastScrollPos < window.scrollY;
     if(isScrollBottom){
       headerRef.current?.classList.add("hide");
-      
+      if(isCartOpen === true){
+        toggleCartSidebar();
+      }
     }else {
       headerRef.current?.classList.remove("hide");
     }
@@ -53,9 +56,9 @@ function Header({toggleNav, isNavOpen, isCartOpen, toggleCartSidebar} : props) {
     <div className="container">
 
 
-      <a href="#" className="logo">
+      <Link to="/" className="logo">
         <img src="./assets/images/logo-no-background.svg" height={50} width={160} alt="Epicurean - Home" />
-      </a>
+      </Link>
 
       {/* Nav */}
 

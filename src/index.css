@@ -715,6 +715,22 @@ body.nav-active {
   animation-delay: 300ms;
 }
 
+.product_img_holder{
+  position: relative;
+  cursor: pointer;
+}
+
+.bagIcon{
+  color: var(--gold-crayola);
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
 .cartSideBar .bar,
 .navbar {
   position: fixed;
@@ -883,17 +899,51 @@ body.nav-active {
 }
 
 .cart-item{
-  margin-bottom: 16px;
+  margin-block: 14px;
+  position: relative;
+  /* background: blue; */
+  transition: var(--transition-2);
+  padding-block: 2rem;
+}
+
+
+.cart-item .cart-item__price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .quantity-counter{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100px;
+  font-weight: bold;
+  color: var(--gold-crayola);
 }
 
 .quantity-counter button{
-  color: var(--gold-crayola)
+  color: white;
+}
+
+
+
+.cart-item__price{
+  font-weight: bold;
+  color: var(--gold-crayola);
+}
+
+.cart-item .close-btn{
+  position: absolute;
+  top: -12px;
+  right: 0;
+  border: none;
+  color: var(--gold-crayola);
+  transition: var(--transition-2);
+}
+
+.cart-item .close-btn:hover {
+  color: red;
 }
 
 /* Hero -------------------------------- */
@@ -905,7 +955,7 @@ body.nav-active {
 .hero {
   position: relative;
   padding-block: 120px;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   z-index: 1;
 }
@@ -1253,6 +1303,11 @@ body.nav-active {
 .cart-item .card-title:is(:hover, :focus-visible),
 .menu-card .card-title:is(:hover, :focus-visible) {
   color: var(--gold-crayola);
+}
+
+
+.img-holder:hover .bagIcon{
+  opacity: 1;
 }
 
 .cart-item .badge,
@@ -2317,3 +2372,5 @@ Footer
 
 
 }
+
+/*  */

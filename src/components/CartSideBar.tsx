@@ -2,9 +2,11 @@
 import React from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
 import { IMenuItem } from './MenuItem';
-import CartItem from './CartItem';
+import CartItem, { ICartItem } from './CartItem';
 import LinkButton from './LinkButton';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { RandString } from '../utils/utils';
 
 
 type Props = {
@@ -12,19 +14,12 @@ type Props = {
   isCartOpen: boolean
 }
 
-const example: IMenuItem = {
-  title: "Hot Chicken Cuban Sandwich",
-  description:
-    "Mayonaise, yellow mustard, ciabatta bread, swiss cheese, dill pickles and rotisserie chicken.",
-  imgUrl:
-    "https://www.sidechef.com/recipe_comment/9470df42-adc0-441e-b548-c585b18aa91b.jpg",
-  price: 24.99,
-  alt: "Hot Chicken Cuban Sandwich",
-  seasonal: false,
-  isNew: false,
-};
 
 export default function CartSideBar({isCartOpen=true, toggleCartSideBar}: Props) {
+
+  const cart = useSelector((state: any) => state.cart)
+
+
   return (
     <section className="cartSideBar">
       <div className="container">
@@ -36,12 +31,15 @@ export default function CartSideBar({isCartOpen=true, toggleCartSideBar}: Props)
       >
         <IoCloseOutline  size={18} />
       </button>
-        <h1 className="headline-1">Cart</h1>
+        <h1 className="headline-2">Total: {RandString.format(cart.total)}</h1>
         {/* LIST OF ITEMS */}
 
-        <CartItem menuItem={example} quantity={1} />
-        <CartItem menuItem={example} quantity={2} />
-        <CartItem menuItem={example} quantity={5} />
+        {cart.items.length === 0 && <p className='label-1'>No items in cart</p>}
+
+        {
+          cart.items.map((item: ICartItem) => <CartItem item={item} key={item.menuItem.title} />)
+        }
+        
 
        </div>
         {/* CHECKOUT BTN */}
