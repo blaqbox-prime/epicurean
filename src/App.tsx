@@ -6,7 +6,10 @@ import { IoChevronUp } from "react-icons/io5";
 import Footer from "./components/Footer";
 
 import Pages from "./components/Pages";
-import CartSideBar from "./components/CartSideBar";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import BackToTop from "./components/BackToTop";
+
 
 
 function App() {
@@ -17,16 +20,20 @@ function App() {
 
 
   useLayoutEffect(() => {
+
     if(!preloaded){window.addEventListener("load", function () {
       setPreloaded(true);
       document.body.classList.add("loaded");
     });}
   }, [preloaded,app]);
 
+
+  //Navbar toggle 
   const toggleNavbar = () => {
     setIsNavOpen((isNavOpen) => !isNavOpen);
   };
 
+  // SideBar Toggle
   const toggleCartSidebar = () => {
     setIsCartOpen((isCartOpen) => !isCartOpen);
   };
@@ -54,11 +61,12 @@ function App() {
 
       {/* BACK TO TOP */}
 
-      <a href="#top" className="back-top-btn " aria-label="back to top" data-back-top-btn 
-      >
-        <IoChevronUp aria-hidden="true"/> 
-      </a>
+      <BackToTop />
 
+      <ToastContainer 
+      position="top-center"
+      theme="colored"
+      />
     </div>
   );
 }
